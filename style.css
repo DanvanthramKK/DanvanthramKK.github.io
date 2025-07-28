@@ -1,72 +1,100 @@
 /* Import Google Font - Inter */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-    /* Modern & Colorful Palette */
+    /* Enhanced Modern & Colorful Palette */
     --primary-color: #4F46E5; /* Deep Indigo */
     --secondary-color: #6366F1; /* Medium Indigo */
-    --accent-color: #EC4899; /* Vibrant Pink for highlights */
+    --accent-color-pink: #EC4899; /* Vibrant Pink for highlights */
+    --accent-color-teal: #14B8A6; /* Complementary Teal for subtle accents */
     --text-color-dark: #1F2937; /* Dark Gray */
     --text-color-light: #4B5563; /* Medium Gray */
     --background-color-light: #F3F4F6; /* Lighter Gray Background */
     --background-color-white: #FFFFFF; /* Pure White */
     --border-color: #E0E7FF; /* Light Blueish Border */
     --shadow-light: rgba(0, 0, 0, 0.08); /* Lighter shadow for general elements */
-    --shadow-hover: rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+    --shadow-medium: rgba(0, 0, 0, 0.12); /* Medium shadow for interactive elements */
+    --shadow-strong: rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
     --gradient-header: linear-gradient(to right, #4F46E5, #6366F1); /* Indigo gradient */
+    --gradient-background: linear-gradient(135deg, #F3F4F6 0%, #E0E7FF 100%); /* Subtle body background gradient */
 }
 
 /* Base Styles */
 body {
     font-family: 'Inter', sans-serif;
-    line-height: 1.7; /* Slightly increased line height for readability */
+    line-height: 1.7;
     color: var(--text-color-dark);
-    background-color: var(--background-color-light);
+    background: var(--gradient-background); /* Subtle gradient background for the body */
     margin: 0;
-    padding: 30px; /* Increased padding */
+    padding: 40px; /* Increased padding */
     display: flex;
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
     box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scroll on animations */
 }
 
 .container {
     background-color: var(--background-color-white);
-    max-width: 950px; /* Slightly wider container */
+    max-width: 1000px; /* Even wider container */
     width: 100%;
-    padding: 50px; /* Increased padding */
-    border-radius: 16px; /* More rounded corners */
-    box-shadow: 0 15px 30px var(--shadow-light); /* Enhanced shadow */
+    padding: 60px; /* Increased padding */
+    border-radius: 20px; /* More rounded corners */
+    box-shadow: 0 20px 40px var(--shadow-medium); /* Enhanced shadow */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    gap: 35px; /* Increased space between sections */
+    gap: 45px; /* Increased space between sections */
+    position: relative;
+    overflow: hidden; /* For potential internal animations */
 }
 
 /* Header Styles */
 header {
     text-align: center;
-    padding-bottom: 25px;
-    border-bottom: 1px solid var(--border-color);
-    position: relative; /* For potential pseudo-elements */
+    padding-bottom: 30px;
+    border-bottom: 2px solid var(--border-color);
+    position: relative;
+    transition: all 0.4s ease-in-out;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--accent-color-pink);
+    transition: width 0.4s ease-in-out;
+}
+
+header:hover::before {
+    width: 100%;
 }
 
 header h1 {
-    font-size: 3.2em; /* Larger heading */
-    background: var(--gradient-header); /* Gradient text */
+    font-size: 3.8em; /* Much larger heading */
+    background: var(--gradient-header);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 10px;
-    font-weight: 800; /* Bolder */
-    letter-spacing: -0.03em; /* Tighter letter spacing */
+    margin-bottom: 12px;
+    font-weight: 900; /* Extra bold */
+    letter-spacing: -0.04em;
+    transition: transform 0.3s ease-in-out;
+}
+
+header h1:hover {
+    transform: scale(1.02); /* Subtle zoom on hover */
 }
 
 header p {
-    font-size: 1.2em; /* Slightly larger text */
+    font-size: 1.3em;
     color: var(--text-color-light);
     margin-top: 0;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     font-weight: 400;
 }
 
@@ -78,22 +106,40 @@ header p strong {
 /* Section Styles */
 .section {
     padding: 0;
+    position: relative;
 }
 
 .section h2 {
-    font-size: 2.2em; /* Larger section titles */
+    font-size: 2.5em; /* Larger section titles */
     color: var(--primary-color);
-    margin-bottom: 20px;
-    border-bottom: 3px solid var(--accent-color); /* Accent color border */
-    padding-bottom: 8px;
+    margin-bottom: 25px;
+    border-bottom: 4px solid var(--accent-color-pink); /* Thicker accent border */
+    padding-bottom: 10px;
     display: inline-block;
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: var(--accent-color-teal); /* Different accent color for hover */
+    transition: width 0.3s ease-in-out;
+}
+
+.section h2:hover::after {
+    width: 100%;
 }
 
 .section p {
-    margin-bottom: 15px; /* More space below paragraphs */
-    font-size: 1.1em; /* Slightly larger text */
+    margin-bottom: 18px;
+    font-size: 1.15em;
     color: var(--text-color-dark);
 }
 
@@ -106,86 +152,144 @@ header p strong {
 
 .section ul li {
     background-color: var(--background-color-light);
-    padding: 20px 25px; /* Increased padding */
-    margin-bottom: 12px; /* More space between items */
-    border-radius: 10px; /* More rounded corners */
+    padding: 22px 30px; /* Increased padding */
+    margin-bottom: 15px; /* More space between items */
+    border-radius: 12px; /* More rounded corners */
     border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    font-size: 1.1em;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.4s ease;
+    font-size: 1.15em;
     color: var(--text-color-dark);
-    position: relative; /* For custom bullet points */
-    padding-left: 45px; /* Space for custom bullet */
+    position: relative;
+    padding-left: 55px; /* Space for more prominent custom bullet */
+    box-shadow: 0 4px 12px var(--shadow-light); /* Initial subtle shadow */
 }
 
 .section ul li::before {
-    content: '•'; /* Custom bullet point */
-    color: var(--accent-color); /* Accent color for bullet */
-    font-size: 1.5em;
+    content: '★'; /* More decorative custom bullet */
+    color: var(--accent-color-pink); /* Accent color for bullet */
+    font-size: 1.8em; /* Larger bullet */
     position: absolute;
     left: 20px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) rotate(0deg);
     font-weight: 800;
+    transition: transform 0.4s ease-in-out, color 0.4s ease;
 }
-
 
 .section ul li:last-child {
     margin-bottom: 0;
 }
 
 .section ul li:hover {
-    transform: translateY(-5px); /* More pronounced lift */
-    box-shadow: 0 8px 20px var(--shadow-hover); /* Stronger shadow on hover */
-    background-color: #EEF2FF; /* Subtle light blue tint on hover */
+    transform: translateY(-8px) scale(1.01); /* More pronounced lift and slight scale */
+    box-shadow: 0 15px 30px var(--shadow-strong); /* Stronger shadow on hover */
+    background-color: #F0F8FF; /* Lighter blue tint on hover */
+    border-color: var(--secondary-color); /* Border color changes on hover */
+}
+
+.section ul li:hover::before {
+    transform: translateY(-50%) rotate(15deg) scale(1.1); /* Rotate and scale bullet */
+    color: var(--accent-color-teal); /* Change bullet color on hover */
 }
 
 .section ul li strong {
     color: var(--primary-color);
     font-weight: 700;
     display: block;
-    margin-bottom: 6px; /* More space below strong text */
+    margin-bottom: 8px;
 }
 
-.section ul li span { /* For dates/scores */
-    font-size: 1em;
+.section ul li span {
+    font-size: 1.05em;
     color: var(--text-color-light);
-    display: block; /* Ensures it's on a new line */
-    margin-top: 5px;
+    display: block;
+    margin-top: 6px;
 }
 
 /* Specific adjustments for skills list */
 .skills p {
     background-color: var(--background-color-light);
-    padding: 20px 25px;
-    border-radius: 10px;
+    padding: 22px 30px;
+    border-radius: 12px;
     border: 1px solid var(--border-color);
     font-weight: 500;
     color: var(--text-color-dark);
-    box-shadow: 0 2px 8px var(--shadow-light); /* Subtle shadow for skills block */
+    box-shadow: 0 6px 15px var(--shadow-light); /* More prominent shadow for skills block */
+    transition: all 0.3s ease;
+}
+
+.skills p:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px var(--shadow-medium);
+    background-color: #EBF4FF; /* Subtle light blue on hover */
 }
 
 /* Footer Styles */
 footer {
     text-align: center;
-    padding-top: 25px;
-    border-top: 1px solid var(--border-color);
-    font-size: 1em; /* Slightly larger footer text */
+    padding-top: 30px;
+    border-top: 2px solid var(--border-color);
+    font-size: 1.05em;
     color: var(--text-color-light);
+    position: relative;
 }
 
 footer a {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.2s ease, text-decoration 0.2s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 3px; /* Space for underline effect */
+}
+
+footer a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color-pink);
+    transition: width 0.3s ease;
 }
 
 footer a:hover {
-    color: var(--accent-color); /* Accent color on hover */
-    text-decoration: underline;
+    color: var(--accent-color-teal); /* Change color on hover */
+}
+
+footer a:hover::after {
+    width: 100%;
 }
 
 /* Responsive Design */
+@media (max-width: 992px) {
+    body {
+        padding: 30px;
+    }
+    .container {
+        padding: 45px;
+        gap: 35px;
+    }
+    header h1 {
+        font-size: 3.2em;
+    }
+    .section h2 {
+        font-size: 2.2em;
+    }
+    .section p, .section ul li, .skills p {
+        font-size: 1.1em;
+    }
+    .section ul li {
+        padding: 20px 25px;
+        padding-left: 50px;
+    }
+    .section ul li::before {
+        font-size: 1.6em;
+        left: 18px;
+    }
+}
+
 @media (max-width: 768px) {
     body {
         padding: 20px;
@@ -215,7 +319,7 @@ footer a:hover {
 
     .section ul li {
         padding: 15px 20px;
-        padding-left: 40px; /* Adjust for smaller screens */
+        padding-left: 40px;
     }
 
     .section ul li::before {
@@ -236,6 +340,7 @@ footer a:hover {
 
     header h1 {
         font-size: 2em;
+        letter-spacing: -0.02em;
     }
 
     header p {
