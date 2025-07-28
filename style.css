@@ -1,310 +1,294 @@
-/* === CYBERPUNK RESUME CSS === */
-/* Warning: Extreme Innovation Ahead */
+/* === APPLE-STYLE ULTRA MODERN RESUME === */
+/* Featuring: Dynamic Glass Morphism, Smooth Scroll Animations, and Hover Micro-Interactions */
 
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --neon-pink: #ff2a6d;
-  --neon-blue: #05d9e8;
-  --neon-purple: #d300c5;
-  --matrix-green: #00ff41;
-  --dark-void: #0d0221;
-  --terminal-bg: rgba(13, 2, 33, 0.85);
-  --glow: 0 0 10px;
+  --apple-white: rgba(255, 255, 255, 0.92);
+  --apple-black: rgba(10, 10, 10, 0.95);
+  --apple-blue: #0a84ff;
+  --apple-purple: #bf5af2;
+  --apple-green: #30d158;
+  --apple-gray: rgba(120, 120, 128, 0.36);
+  --glass-blur: blur(20px);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+  --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
-/* === CRT MONITOR EFFECT === */
+/* === SMOOTH SCROLL & BASE STYLES === */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: var(--dark-void);
-  color: var(--neon-blue);
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(160deg, #f5f5f7 0%, #e5e5ea 100%);
+  color: var(--apple-black);
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
-  
-  /* CRT Scanlines */
-  background-image: 
-    linear-gradient(
-      rgba(5, 217, 232, 0.1) 1px, 
-      transparent 1px
-    );
-  background-size: 100% 2px;
-  
-  /* Flicker Animation */
-  animation: flicker 0.01s infinite alternate;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* === CYBER TERMINAL CONTAINER === */
+/* === DYNAMIC GLASS CONTAINER === */
 .container {
   max-width: 900px;
   margin: 2rem auto;
-  padding: 2rem;
-  background: var(--terminal-bg);
-  border: 1px solid var(--neon-pink);
-  box-shadow: 
-    var(--glow) var(--neon-pink),
-    var(--glow) var(--neon-blue),
-    inset var(--glow) var(--neon-purple);
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-radius: 24px;
+  border: var(--glass-border);
+  box-shadow: var(--shadow-soft);
   position: relative;
   overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* === BINARY RAIN BACKGROUND (Like The Matrix) === */
-.container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    linear-gradient(transparent 80%, var(--dark-void)),
-    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><text x="10" y="15" fill="%2305d9e8" opacity="0.1" font-family="monospace" font-size="12">1 0 1 0 1 0 1 0</text></svg>');
-  background-size: 100px 100px;
-  opacity: 0.15;
-  z-index: -1;
-}
-
-/* === GLITCH EFFECT ON HOVER === */
-.container:hover::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    linear-gradient(90deg, transparent 48%, var(--neon-pink) 49%, var(--neon-blue) 51%, transparent 52%);
-  opacity: 0.3;
-  pointer-events: none;
-  animation: glitch 0.3s infinite;
-}
-
-/* === HEADER STYLES (HACKER TERMINAL VIBE) === */
+/* === APPLE-STYLE HEADER (DYNAMIC GRADIENT) === */
 header {
   text-align: center;
   margin-bottom: 3rem;
   position: relative;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px dashed var(--neon-pink);
+  padding-bottom: 2rem;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--apple-blue), var(--apple-purple));
+  border-radius: 3px;
 }
 
 header h1 {
-  font-family: 'Share Tech Mono', monospace;
   font-size: 3.5rem;
+  font-weight: 700;
   margin-bottom: 0.5rem;
-  color: transparent;
-  background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+  background: linear-gradient(90deg, var(--apple-blue), var(--apple-purple));
   -webkit-background-clip: text;
   background-clip: text;
-  text-shadow: 0 0 15px var(--neon-purple);
-  letter-spacing: -2px;
-  animation: textGlow 2s infinite alternate;
+  color: transparent;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 header p {
-  font-family: 'Share Tech Mono', monospace;
-  color: var(--matrix-green);
-  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--apple-gray);
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s 0.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 header p strong {
-  color: var(--neon-blue);
-  text-shadow: 0 0 5px var(--neon-blue);
+  color: var(--apple-black);
+  font-weight: 600;
 }
 
-/* === SECTIONS (TERMINAL-LIKE BOXES) === */
+/* === SECTIONS (APPLE-STYLE FROSTED GLASS CARDS) === */
 .section {
-  margin-bottom: 3rem;
-  padding: 1.5rem;
-  border: 1px solid var(--neon-purple);
-  border-radius: 0;
-  background: rgba(5, 217, 232, 0.03);
-  position: relative;
-  transition: all 0.3s ease;
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-radius: 18px;
+  border: var(--glass-border);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
+
+.section:nth-child(1) { animation-delay: 0.3s; }
+.section:nth-child(2) { animation-delay: 0.4s; }
+.section:nth-child(3) { animation-delay: 0.5s; }
+.section:nth-child(4) { animation-delay: 0.6s; }
+.section:nth-child(5) { animation-delay: 0.7s; }
 
 .section:hover {
-  box-shadow: 
-    0 0 15px var(--neon-pink),
-    inset 0 0 10px var(--neon-blue);
-  transform: translateY(-3px);
-  background: rgba(255, 42, 109, 0.05);
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .section h2 {
-  font-family: 'Share Tech Mono', monospace;
-  color: var(--matrix-green);
+  font-size: 1.8rem;
+  font-weight: 600;
   margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: relative;
+  color: var(--apple-black);
+  display: flex;
+  align-items: center;
+}
+
+.section h2::before {
+  content: '';
   display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--apple-blue), var(--apple-purple));
+  margin-right: 12px;
+  box-shadow: 0 0 8px rgba(10, 132, 255, 0.4);
 }
 
-.section h2::after {
-  content: ">>";
-  margin-left: 10px;
-  color: var(--neon-pink);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.section:hover h2::after {
-  opacity: 1;
-}
-
-/* === LIST ITEMS (TERMINAL STYLE) === */
+/* === LIST ITEMS (APPLE-STYLE MINIMALIST) === */
 ul {
   list-style-type: none;
   padding-left: 0;
 }
 
 li {
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
+  margin-bottom: 1.2rem;
+  padding-left: 1.8rem;
   position: relative;
-  font-family: 'Rajdhani', sans-serif;
+  font-weight: 400;
+  color: rgba(10, 10, 10, 0.8);
+  line-height: 1.5;
 }
 
 li::before {
-  content: "[*]";
+  content: '•';
   position: absolute;
   left: 0;
-  color: var(--neon-pink);
-  font-family: 'Share Tech Mono', monospace;
+  color: var(--apple-blue);
+  font-size: 1.5rem;
+  line-height: 1;
 }
 
-/* === FOOTER (STATUS BAR) === */
+li strong {
+  font-weight: 600;
+  color: var(--apple-black);
+}
+
+/* === FOOTER (APPLE-STYLE STATUS BAR) === */
 footer {
   text-align: center;
   margin-top: 3rem;
-  padding: 1rem;
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 0.8rem;
-  color: var(--neon-blue);
-  border-top: 1px dashed var(--neon-pink);
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--apple-gray);
+  border-top: 1px solid rgba(120, 120, 128, 0.2);
   position: relative;
 }
 
-footer::before {
-  content: "SYSTEM_ACTIVE";
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--matrix-green);
+footer a {
+  color: var(--apple-blue);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-footer::after {
-  content: "READY";
+footer a:hover {
+  color: var(--apple-purple);
+}
+
+footer a::after {
+  content: '';
   position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--matrix-green);
-  animation: blink 1s infinite;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--apple-purple);
+  transition: width 0.3s ease;
+}
+
+footer a:hover::after {
+  width: 100%;
 }
 
 /* === KEYFRAME ANIMATIONS === */
-@keyframes flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    opacity: 1;
-  }
-  20%, 22%, 24%, 55% {
-    opacity: 0.8;
-  }
-}
-
-@keyframes glitch {
-  0% {
-    transform: translateX(-5px);
-  }
-  25% {
-    transform: translateX(5px);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-  75% {
-    transform: translateY(5px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes textGlow {
-  0% {
-    text-shadow: 0 0 10px var(--neon-pink);
-  }
-  100% {
-    text-shadow: 0 0 20px var(--neon-blue);
-  }
-}
-
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
+@keyframes fadeInUp {
+  from {
     opacity: 0;
+    transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* === INTERACTIVE ELEMENTS === */
+/* Apple-like button hover effect */
+.section {
+  cursor: pointer;
+}
+
+.section:active {
+  transform: scale(0.98);
+}
+
+/* Subtle parallax effect on scroll */
+.container {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 16px;
+  }
+  
   header h1 {
     font-size: 2.5rem;
   }
   
-  .container {
-    padding: 1rem;
-    margin: 1rem;
-  }
-  
   .section {
-    padding: 1rem;
+    padding: 1.5rem;
+    border-radius: 14px;
   }
 }
 
-/* === EXTRA CRAZY EFFECTS === */
-/* Hover on links = electric zap */
-a {
-  color: var(--neon-blue);
-  text-decoration: none;
-  position: relative;
+/* === DYNAMIC BACKGROUND EFFECT === */
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(10, 132, 255, 0.05) 0%, transparent 50%);
+  z-index: -1;
+  animation: float 15s infinite alternate ease-in-out;
 }
 
-a:hover {
-  color: var(--matrix-green);
+/* === MODERN SCROLLBAR === */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-a::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
-  transform: scaleX(0);
-  transition: transform 0.3s;
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
 }
 
-a:hover::after {
-  transform: scaleX(1);
-}
-
-/* Random glitch effect on sections */
-.section:nth-child(odd):hover {
-  animation: randomGlitch 0.5s;
-}
-
-@keyframes randomGlitch {
-  0% { transform: translateX(0); }
-  20% { transform: translateX(-5px); }
-  40% { transform: translateX(5px); }
-  60% { transform: translateY(-3px); }
-  80% { transform: translateY(3px); }
-  100% { transform: translateX(0); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--apple-blue), var(--apple-purple));
+  border-radius: 10px;
 }
