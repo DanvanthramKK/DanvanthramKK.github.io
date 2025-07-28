@@ -1,133 +1,64 @@
-/* style.css */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Quicksand:wght@400;600&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Danvanthram KK - Resume</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Danvanthram KK</h1>
+      <p>Passionate Computer Science Student | Aspiring Engineer</p>
+      <p><strong>Email:</strong> danvanth@gmail.com | <strong>Phone:</strong> +91 9344480960</p>
+      <p><strong>Location:</strong> 71/10, Chitrai Street, Virugambakkam, Chennai - 600092</p>
+    </header>
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
+    <section class="section about">
+      <h2>About Me</h2>
+      <p>
+        I am a passionate engineer who is curious to learn and adopt new technologies, willing to go the extra mile and solve complex problems. I want to be a part of technology evolution and build products that help improve human lives.
+      </p>
+    </section>
 
-body {
-  font-family: 'Quicksand', sans-serif;
-  background: linear-gradient(135deg, #ff6ec4, #7873f5);
-  color: #fff;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 40px;
-  background-attachment: fixed;
-  animation: backgroundMove 20s infinite linear;
-}
+    <section class="section education">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>BE (CSE)</strong> - Chennai Institute of Technology, 2023–Present<br/>CGPA: 9.03</li>
+        <li><strong>12th CBSE</strong> - Chinmaya Vidyalaya, Virugambakkam, 2022–23<br/>Scored 87.6%</li>
+        <li><strong>10th CBSE</strong> - Chinmaya Vidyalaya, Virugambakkam, 2020–21<br/>Scored 87.6%</li>
+      </ul>
+    </section>
 
-@keyframes backgroundMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+    <section class="section skills">
+      <h2>Skills</h2>
+      <p>Python, Java, C/C++, JavaScript, HTML/CSS, Problem Solving, Algorithms, Linear Programming (PuLP)</p>
+    </section>
 
-.container {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: 30px 50px;
-  max-width: 900px;
-  width: 100%;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s;
-}
+    <section class="section projects">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Hack4Health @ IIIT Delhi</strong> – First Runner-Up | Project on Medical Adherence</li>
+        <li><strong>Biograph AI</strong> – Mimics document character for automated analysis</li>
+        <li>Disaster Impact Analysis for Nearby Cities</li>
+        <li>WARZONE – A game developed using Pygame</li>
+        <li>Mentored 60+ juniors in Python programming for a month</li>
+        <li>Leetcode enthusiast – Solved 400+ problems</li>
+      </ul>
+    </section>
 
-.container:hover {
-  transform: scale(1.01);
-}
+    <section class="section internship">
+      <h2>Internships</h2>
+      <ul>
+        <li><strong>LogicField Technology Solution Pvt. Ltd.</strong> (May–June 2024) – Python-based global catastrophic data reporting</li>
+        <li><strong>AgilizTech Software Services Pvt. Ltd.</strong> (Nov–Dec 2024) – Optimized Procurement System using Python</li>
+      </ul>
+    </section>
 
-header h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 2.5rem;
-  background: linear-gradient(to right, #f7971e, #ffd200);
-  -webkit-background-clip: text;
-  color: transparent;
-  margin-bottom: 10px;
-}
-
-header p {
-  font-size: 1rem;
-  color: #f8f8f8;
-  margin: 4px 0;
-}
-
-.section {
-  margin-top: 30px;
-  padding: 20px;
-  border-radius: 15px;
-  background: linear-gradient(120deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: inset 0 0 10px rgba(255,255,255,0.1);
-}
-
-.section h2 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #ffd86f;
-  text-shadow: 1px 1px 2px #000;
-  position: relative;
-}
-
-.section h2::after {
-  content: "";
-  width: 80px;
-  height: 3px;
-  background: #ff8c00;
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  border-radius: 2px;
-}
-
-.section ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.section li {
-  padding: 10px 0;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
-  transition: transform 0.2s ease;
-}
-
-.section li:hover {
-  transform: translateX(5px);
-  color: #fffd8c;
-}
-
-.skills p {
-  font-size: 1.1rem;
-  color: #eaffd0;
-}
-
-footer {
-  text-align: center;
-  margin-top: 40px;
-  padding-top: 15px;
-  border-top: 1px dashed rgba(255, 255, 255, 0.3);
-}
-
-footer a {
-  color: #ffffa0;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-footer a:hover {
-  color: #fff;
-  text-shadow: 0 0 5px #fff;
-}
+    <footer>
+      <p>GitHub: <a href="#">GITHUB_PROFILE</a> | LeetCode: <a href="#">LEETCODE_ID</a></p>
+    </footer>
+  </div>
+</body>
+</html>
