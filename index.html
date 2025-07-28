@@ -1,64 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Danvanthram KK - Resume</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danvanthram KK - Interactive Resume</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Danvanthram KK</h1>
-      <p>Passionate Computer Science Student | Aspiring Engineer</p>
-      <p><strong>Email:</strong> danvanth@gmail.com | <strong>Phone:</strong> +91 9344480960</p>
-      <p><strong>Location:</strong> 71/10, Chitrai Street, Virugambakkam, Chennai - 600092</p>
-    </header>
-
-    <section class="section about">
-      <h2>About Me</h2>
-      <p>
-        I am a passionate engineer who is curious to learn and adopt new technologies, willing to go the extra mile and solve complex problems. I want to be a part of technology evolution and build products that help improve human lives.
-      </p>
+  <header>
+    <h1>DK</h1>
+  </header>
+  
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Hey there!<br>I'm Danvanthram KK</h1>
+      <p>Computer Science Engineer | Problem Solver</p>
+      <div class="scroll-indicator">
+        <span>Scroll to explore</span>
+      </div>
     </section>
-
-    <section class="section education">
-      <h2>Education</h2>
-      <ul>
-        <li><strong>BE (CSE)</strong> - Chennai Institute of Technology, 2023–Present<br/>CGPA: 9.03</li>
-        <li><strong>12th CBSE</strong> - Chinmaya Vidyalaya, Virugambakkam, 2022–23<br/>Scored 87.6%</li>
-        <li><strong>10th CBSE</strong> - Chinmaya Vidyalaya, Virugambakkam, 2020–21<br/>Scored 87.6%</li>
-      </ul>
+    
+    <!-- About Me Section -->
+    <section class="section accent-section">
+      <h2>I BUILD INNOVATIVE SOLUTIONS</h2>
+      <p>Passionate engineer curious to learn and adopt new technologies, willing to solve complex problems.</p>
     </section>
-
-    <section class="section skills">
-      <h2>Skills</h2>
-      <p>Python, Java, C/C++, JavaScript, HTML/CSS, Problem Solving, Algorithms, Linear Programming (PuLP)</p>
+    
+    <!-- Education Section -->
+    <section class="section">
+      <h2>EDUCATION</h2>
+      <div class="content-block">
+        <h3>BE (CSE)</h3>
+        <p>Chennai Institute of Technology<br>2023–Present | CGPA: 9.03</p>
+      </div>
+      <div class="content-block">
+        <h3>12th CBSE</h3>
+        <p>Chinmaya Vidyalaya<br>2022–23 | 87.6%</p>
+      </div>
     </section>
-
-    <section class="section projects">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>Hack4Health @ IIIT Delhi</strong> – First Runner-Up | Project on Medical Adherence</li>
-        <li><strong>Biograph AI</strong> – Mimics document character for automated analysis</li>
-        <li>Disaster Impact Analysis for Nearby Cities</li>
-        <li>WARZONE – A game developed using Pygame</li>
-        <li>Mentored 60+ juniors in Python programming for a month</li>
-        <li>Leetcode enthusiast – Solved 400+ problems</li>
-      </ul>
+    
+    <!-- Skills Section -->
+    <section class="section dark-section">
+      <h2>TECHNICAL SKILLS</h2>
+      <div class="skills-grid">
+        <div class="skill">Python</div>
+        <div class="skill">Java</div>
+        <div class="skill">C/C++</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">HTML/CSS</div>
+        <div class="skill">Algorithms</div>
+      </div>
     </section>
-
-    <section class="section internship">
-      <h2>Internships</h2>
-      <ul>
-        <li><strong>LogicField Technology Solution Pvt. Ltd.</strong> (May–June 2024) – Python-based global catastrophic data reporting</li>
-        <li><strong>AgilizTech Software Services Pvt. Ltd.</strong> (Nov–Dec 2024) – Optimized Procurement System using Python</li>
-      </ul>
+    
+    <!-- Projects Section -->
+    <section class="section">
+      <h2>KEY PROJECTS</h2>
+      <div class="project-card">
+        <h3>Hack4Health @ IIIT Delhi</h3>
+        <p>First Runner-Up | Medical Adherence Project</p>
+      </div>
+      <div class="project-card">
+        <h3>Biograph AI</h3>
+        <p>Mimics document character for automated analysis</p>
+      </div>
     </section>
+    
+    <!-- Contact Section -->
+    <section class="section contact-section">
+      <h2>LET'S CONNECT</h2>
+      <p>Email: danvanth@gmail.com<br>Phone: +91 9344480960</p>
+      <p>Chennai, India</p>
+    </section>
+  </main>
 
-    <footer>
-      <p>GitHub: <a href="#">GITHUB_PROFILE</a> | LeetCode: <a href="#">LEETCODE_ID</a></p>
-    </footer>
-  </div>
+  <script src="script.js"></script>
 </body>
 </html>
