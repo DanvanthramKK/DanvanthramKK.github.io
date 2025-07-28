@@ -1,382 +1,133 @@
-/* Import Google Font - Inter */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Quicksand:wght@400;600&display=swap');
 
-:root {
-    /* Enhanced Modern & Colorful Palette */
-    --primary-color: #4F46E5; /* Deep Indigo */
-    --secondary-color: #6366F1; /* Medium Indigo */
-    --accent-color-pink: #EC4899; /* Vibrant Pink for highlights */
-    --accent-color-teal: #14B8A6; /* Complementary Teal for subtle accents */
-    --text-color-dark: #1F2937; /* Dark Gray */
-    --text-color-light: #4B5563; /* Medium Gray */
-    --background-color-light: #F3F4F6; /* Lighter Gray Background */
-    --background-color-white: #FFFFFF; /* Pure White */
-    --border-color: #E0E7FF; /* Light Blueish Border */
-    --shadow-light: rgba(0, 0, 0, 0.08); /* Lighter shadow for general elements */
-    --shadow-medium: rgba(0, 0, 0, 0.12); /* Medium shadow for interactive elements */
-    --shadow-strong: rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
-    --gradient-header: linear-gradient(to right, #4F46E5, #6366F1); /* Indigo gradient */
-    --gradient-background: linear-gradient(135deg, #F3F4F6 0%, #E0E7FF 100%); /* Subtle body background gradient */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-/* Base Styles */
 body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.7;
-    color: var(--text-color-dark);
-    background: var(--gradient-background); /* Subtle gradient background for the body */
-    margin: 0;
-    padding: 40px; /* Increased padding */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    box-sizing: border-box;
-    overflow-x: hidden; /* Prevent horizontal scroll on animations */
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #ff6ec4, #7873f5);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  background-attachment: fixed;
+  animation: backgroundMove 20s infinite linear;
+}
+
+@keyframes backgroundMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .container {
-    background-color: var(--background-color-white);
-    max-width: 1000px; /* Even wider container */
-    width: 100%;
-    padding: 60px; /* Increased padding */
-    border-radius: 20px; /* More rounded corners */
-    box-shadow: 0 20px 40px var(--shadow-medium); /* Enhanced shadow */
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap: 45px; /* Increased space between sections */
-    position: relative;
-    overflow: hidden; /* For potential internal animations */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px 50px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s;
 }
 
-/* Header Styles */
-header {
-    text-align: center;
-    padding-bottom: 30px;
-    border-bottom: 2px solid var(--border-color);
-    position: relative;
-    transition: all 0.4s ease-in-out;
-}
-
-header::before {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    background: var(--accent-color-pink);
-    transition: width 0.4s ease-in-out;
-}
-
-header:hover::before {
-    width: 100%;
+.container:hover {
+  transform: scale(1.01);
 }
 
 header h1 {
-    font-size: 3.8em; /* Much larger heading */
-    background: var(--gradient-header);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 12px;
-    font-weight: 900; /* Extra bold */
-    letter-spacing: -0.04em;
-    transition: transform 0.3s ease-in-out;
-}
-
-header h1:hover {
-    transform: scale(1.02); /* Subtle zoom on hover */
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  background: linear-gradient(to right, #f7971e, #ffd200);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
 }
 
 header p {
-    font-size: 1.3em;
-    color: var(--text-color-light);
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-weight: 400;
+  font-size: 1rem;
+  color: #f8f8f8;
+  margin: 4px 0;
 }
 
-header p strong {
-    color: var(--text-color-dark);
-    font-weight: 600;
-}
-
-/* Section Styles */
 .section {
-    padding: 0;
-    position: relative;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 15px;
+  background: linear-gradient(120deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.1);
 }
 
 .section h2 {
-    font-size: 2.5em; /* Larger section titles */
-    color: var(--primary-color);
-    margin-bottom: 25px;
-    border-bottom: 4px solid var(--accent-color-pink); /* Thicker accent border */
-    padding-bottom: 10px;
-    display: inline-block;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    position: relative;
-    transition: all 0.3s ease-in-out;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #ffd86f;
+  text-shadow: 1px 1px 2px #000;
+  position: relative;
 }
 
 .section h2::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 4px;
-    background: var(--accent-color-teal); /* Different accent color for hover */
-    transition: width 0.3s ease-in-out;
+  content: "";
+  width: 80px;
+  height: 3px;
+  background: #ff8c00;
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  border-radius: 2px;
 }
 
-.section h2:hover::after {
-    width: 100%;
-}
-
-.section p {
-    margin-bottom: 18px;
-    font-size: 1.15em;
-    color: var(--text-color-dark);
-}
-
-/* List Styles (Education, Projects, Internships) */
 .section ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding-left: 0;
 }
 
-.section ul li {
-    background-color: var(--background-color-light);
-    padding: 22px 30px; /* Increased padding */
-    margin-bottom: 15px; /* More space between items */
-    border-radius: 12px; /* More rounded corners */
-    border: 1px solid var(--border-color);
-    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.4s ease;
-    font-size: 1.15em;
-    color: var(--text-color-dark);
-    position: relative;
-    padding-left: 55px; /* Space for more prominent custom bullet */
-    box-shadow: 0 4px 12px var(--shadow-light); /* Initial subtle shadow */
+.section li {
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+  transition: transform 0.2s ease;
 }
 
-.section ul li::before {
-    content: '★'; /* More decorative custom bullet */
-    color: var(--accent-color-pink); /* Accent color for bullet */
-    font-size: 1.8em; /* Larger bullet */
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%) rotate(0deg);
-    font-weight: 800;
-    transition: transform 0.4s ease-in-out, color 0.4s ease;
+.section li:hover {
+  transform: translateX(5px);
+  color: #fffd8c;
 }
 
-.section ul li:last-child {
-    margin-bottom: 0;
-}
-
-.section ul li:hover {
-    transform: translateY(-8px) scale(1.01); /* More pronounced lift and slight scale */
-    box-shadow: 0 15px 30px var(--shadow-strong); /* Stronger shadow on hover */
-    background-color: #F0F8FF; /* Lighter blue tint on hover */
-    border-color: var(--secondary-color); /* Border color changes on hover */
-}
-
-.section ul li:hover::before {
-    transform: translateY(-50%) rotate(15deg) scale(1.1); /* Rotate and scale bullet */
-    color: var(--accent-color-teal); /* Change bullet color on hover */
-}
-
-.section ul li strong {
-    color: var(--primary-color);
-    font-weight: 700;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.section ul li span {
-    font-size: 1.05em;
-    color: var(--text-color-light);
-    display: block;
-    margin-top: 6px;
-}
-
-/* Specific adjustments for skills list */
 .skills p {
-    background-color: var(--background-color-light);
-    padding: 22px 30px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    font-weight: 500;
-    color: var(--text-color-dark);
-    box-shadow: 0 6px 15px var(--shadow-light); /* More prominent shadow for skills block */
-    transition: all 0.3s ease;
+  font-size: 1.1rem;
+  color: #eaffd0;
 }
 
-.skills p:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px var(--shadow-medium);
-    background-color: #EBF4FF; /* Subtle light blue on hover */
-}
-
-/* Footer Styles */
 footer {
-    text-align: center;
-    padding-top: 30px;
-    border-top: 2px solid var(--border-color);
-    font-size: 1.05em;
-    color: var(--text-color-light);
-    position: relative;
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 15px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.3);
 }
 
 footer a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    position: relative;
-    padding-bottom: 3px; /* Space for underline effect */
-}
-
-footer a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--accent-color-pink);
-    transition: width 0.3s ease;
+  color: #ffffa0;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
 footer a:hover {
-    color: var(--accent-color-teal); /* Change color on hover */
-}
-
-footer a:hover::after {
-    width: 100%;
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-    body {
-        padding: 30px;
-    }
-    .container {
-        padding: 45px;
-        gap: 35px;
-    }
-    header h1 {
-        font-size: 3.2em;
-    }
-    .section h2 {
-        font-size: 2.2em;
-    }
-    .section p, .section ul li, .skills p {
-        font-size: 1.1em;
-    }
-    .section ul li {
-        padding: 20px 25px;
-        padding-left: 50px;
-    }
-    .section ul li::before {
-        font-size: 1.6em;
-        left: 18px;
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        padding: 20px;
-    }
-    .container {
-        padding: 35px;
-        margin: 0 10px;
-        gap: 25px;
-    }
-
-    header h1 {
-        font-size: 2.5em;
-    }
-
-    header p {
-        font-size: 1.05em;
-    }
-
-    .section h2 {
-        font-size: 1.8em;
-        margin-bottom: 15px;
-    }
-
-    .section p, .section ul li, .skills p {
-        font-size: 1em;
-    }
-
-    .section ul li {
-        padding: 15px 20px;
-        padding-left: 40px;
-    }
-
-    .section ul li::before {
-        left: 15px;
-        font-size: 1.3em;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        padding: 15px;
-    }
-    .container {
-        padding: 25px;
-        border-radius: 12px;
-        gap: 20px;
-    }
-
-    header h1 {
-        font-size: 2em;
-        letter-spacing: -0.02em;
-    }
-
-    header p {
-        font-size: 0.95em;
-    }
-
-    .section h2 {
-        font-size: 1.6em;
-        margin-bottom: 12px;
-    }
-
-    .section p, .section ul li, .skills p {
-        font-size: 0.9em;
-    }
-
-    .section ul li {
-        padding: 12px 15px;
-        margin-bottom: 10px;
-        border-radius: 8px;
-        padding-left: 35px;
-    }
-
-    .section ul li::before {
-        left: 12px;
-        font-size: 1.2em;
-    }
-
-    .section ul li strong {
-        margin-bottom: 4px;
-    }
-
-    .skills p {
-        padding: 15px 20px;
-    }
-
-    footer {
-        font-size: 0.8em;
-    }
+  color: #fff;
+  text-shadow: 0 0 5px #fff;
 }
