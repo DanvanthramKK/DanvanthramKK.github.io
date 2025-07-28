@@ -1,225 +1,277 @@
 /* Import Google Font - Inter */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    /* Color Palette */
-    --primary-color: #3B82F6; /* A vibrant blue */
-    --secondary-color: #60A5FA; /* A lighter blue */
-    --text-color-dark: #1F2937; /* Dark gray for main text */
-    --text-color-light: #4B5563; /* Medium gray for secondary text */
-    --background-color-light: #F9FAFB; /* Light background */
-    --background-color-white: #FFFFFF; /* Pure white for content cards */
-    --border-color: #E5E7EB; /* Light gray border */
-    --shadow-color: rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    /* Modern & Colorful Palette */
+    --primary-color: #4F46E5; /* Deep Indigo */
+    --secondary-color: #6366F1; /* Medium Indigo */
+    --accent-color: #EC4899; /* Vibrant Pink for highlights */
+    --text-color-dark: #1F2937; /* Dark Gray */
+    --text-color-light: #4B5563; /* Medium Gray */
+    --background-color-light: #F3F4F6; /* Lighter Gray Background */
+    --background-color-white: #FFFFFF; /* Pure White */
+    --border-color: #E0E7FF; /* Light Blueish Border */
+    --shadow-light: rgba(0, 0, 0, 0.08); /* Lighter shadow for general elements */
+    --shadow-hover: rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+    --gradient-header: linear-gradient(to right, #4F46E5, #6366F1); /* Indigo gradient */
 }
 
 /* Base Styles */
 body {
     font-family: 'Inter', sans-serif;
-    line-height: 1.6;
+    line-height: 1.7; /* Slightly increased line height for readability */
     color: var(--text-color-dark);
     background-color: var(--background-color-light);
     margin: 0;
-    padding: 20px;
+    padding: 30px; /* Increased padding */
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Align to the top */
+    align-items: flex-start;
     min-height: 100vh;
     box-sizing: border-box;
 }
 
 .container {
     background-color: var(--background-color-white);
-    max-width: 900px;
+    max-width: 950px; /* Slightly wider container */
     width: 100%;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px var(--shadow-color);
+    padding: 50px; /* Increased padding */
+    border-radius: 16px; /* More rounded corners */
+    box-shadow: 0 15px 30px var(--shadow-light); /* Enhanced shadow */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    gap: 30px; /* Space between sections */
+    gap: 35px; /* Increased space between sections */
 }
 
 /* Header Styles */
 header {
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
     border-bottom: 1px solid var(--border-color);
+    position: relative; /* For potential pseudo-elements */
 }
 
 header h1 {
-    font-size: 2.8em;
-    color: var(--primary-color);
-    margin-bottom: 8px;
-    font-weight: 700;
+    font-size: 3.2em; /* Larger heading */
+    background: var(--gradient-header); /* Gradient text */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+    font-weight: 800; /* Bolder */
+    letter-spacing: -0.03em; /* Tighter letter spacing */
 }
 
 header p {
-    font-size: 1.1em;
+    font-size: 1.2em; /* Slightly larger text */
     color: var(--text-color-light);
     margin-top: 0;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    font-weight: 400;
 }
 
 header p strong {
     color: var(--text-color-dark);
+    font-weight: 600;
 }
 
 /* Section Styles */
 .section {
-    padding: 0; /* Already handled by container gap */
+    padding: 0;
 }
 
 .section h2 {
-    font-size: 1.8em;
+    font-size: 2.2em; /* Larger section titles */
     color: var(--primary-color);
-    margin-bottom: 15px;
-    border-bottom: 2px solid var(--secondary-color);
-    padding-bottom: 5px;
-    display: inline-block; /* Makes the border only as wide as the text */
-    font-weight: 600;
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--accent-color); /* Accent color border */
+    padding-bottom: 8px;
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 .section p {
-    margin-bottom: 10px;
-    font-size: 1.05em;
+    margin-bottom: 15px; /* More space below paragraphs */
+    font-size: 1.1em; /* Slightly larger text */
     color: var(--text-color-dark);
 }
 
 /* List Styles (Education, Projects, Internships) */
 .section ul {
-    list-style: none; /* Remove default bullet points */
+    list-style: none;
     padding: 0;
     margin: 0;
 }
 
 .section ul li {
     background-color: var(--background-color-light);
-    padding: 15px 20px;
-    margin-bottom: 10px;
-    border-radius: 8px;
+    padding: 20px 25px; /* Increased padding */
+    margin-bottom: 12px; /* More space between items */
+    border-radius: 10px; /* More rounded corners */
     border: 1px solid var(--border-color);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    font-size: 1.05em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    font-size: 1.1em;
     color: var(--text-color-dark);
+    position: relative; /* For custom bullet points */
+    padding-left: 45px; /* Space for custom bullet */
 }
+
+.section ul li::before {
+    content: '•'; /* Custom bullet point */
+    color: var(--accent-color); /* Accent color for bullet */
+    font-size: 1.5em;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 800;
+}
+
 
 .section ul li:last-child {
     margin-bottom: 0;
 }
 
 .section ul li:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px var(--shadow-color);
+    transform: translateY(-5px); /* More pronounced lift */
+    box-shadow: 0 8px 20px var(--shadow-hover); /* Stronger shadow on hover */
+    background-color: #EEF2FF; /* Subtle light blue tint on hover */
 }
 
 .section ul li strong {
     color: var(--primary-color);
-    font-weight: 600;
-    display: block; /* Puts the strong text on its own line */
-    margin-bottom: 5px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 6px; /* More space below strong text */
 }
 
 .section ul li span { /* For dates/scores */
-    font-size: 0.95em;
+    font-size: 1em;
     color: var(--text-color-light);
+    display: block; /* Ensures it's on a new line */
+    margin-top: 5px;
 }
 
 /* Specific adjustments for skills list */
 .skills p {
     background-color: var(--background-color-light);
-    padding: 15px 20px;
-    border-radius: 8px;
+    padding: 20px 25px;
+    border-radius: 10px;
     border: 1px solid var(--border-color);
     font-weight: 500;
     color: var(--text-color-dark);
+    box-shadow: 0 2px 8px var(--shadow-light); /* Subtle shadow for skills block */
 }
 
 /* Footer Styles */
 footer {
     text-align: center;
-    padding-top: 20px;
+    padding-top: 25px;
     border-top: 1px solid var(--border-color);
-    font-size: 0.95em;
+    font-size: 1em; /* Slightly larger footer text */
     color: var(--text-color-light);
 }
 
 footer a {
     color: var(--primary-color);
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s ease;
+    font-weight: 600;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
 }
 
 footer a:hover {
-    color: var(--secondary-color);
+    color: var(--accent-color); /* Accent color on hover */
     text-decoration: underline;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
     .container {
-        padding: 30px;
-        margin: 0 15px;
+        padding: 35px;
+        margin: 0 10px;
+        gap: 25px;
     }
 
     header h1 {
-        font-size: 2.2em;
+        font-size: 2.5em;
     }
 
     header p {
-        font-size: 1em;
+        font-size: 1.05em;
     }
 
     .section h2 {
-        font-size: 1.5em;
+        font-size: 1.8em;
+        margin-bottom: 15px;
     }
 
     .section p, .section ul li, .skills p {
-        font-size: 0.95em;
+        font-size: 1em;
+    }
+
+    .section ul li {
+        padding: 15px 20px;
+        padding-left: 40px; /* Adjust for smaller screens */
+    }
+
+    .section ul li::before {
+        left: 15px;
+        font-size: 1.3em;
     }
 }
 
 @media (max-width: 480px) {
     body {
-        padding: 10px;
+        padding: 15px;
     }
-
     .container {
-        padding: 20px;
-        border-radius: 8px;
+        padding: 25px;
+        border-radius: 12px;
         gap: 20px;
     }
 
     header h1 {
-        font-size: 1.8em;
+        font-size: 2em;
     }
 
     header p {
-        font-size: 0.9em;
+        font-size: 0.95em;
     }
 
     .section h2 {
-        font-size: 1.3em;
-        margin-bottom: 10px;
+        font-size: 1.6em;
+        margin-bottom: 12px;
+    }
+
+    .section p, .section ul li, .skills p {
+        font-size: 0.9em;
     }
 
     .section ul li {
         padding: 12px 15px;
-        margin-bottom: 8px;
-        border-radius: 6px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        padding-left: 35px;
+    }
+
+    .section ul li::before {
+        left: 12px;
+        font-size: 1.2em;
     }
 
     .section ul li strong {
-        margin-bottom: 3px;
+        margin-bottom: 4px;
     }
 
     .skills p {
-        padding: 12px 15px;
+        padding: 15px 20px;
     }
 
     footer {
-        font-size: 0.85em;
+        font-size: 0.8em;
     }
 }
